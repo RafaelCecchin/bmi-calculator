@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Float height, weight;
     private Integer age;
-    private String gender, result;
+    private String gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,27 +44,33 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             if (validateAllData()) {
-
-                Float bmi = getWeight() / ( getHeight() * getHeight() );
-
-                if (bmi >= 18.5 && bmi < 25) {
-                    setResult("Normal weight");
-                } else if (bmi >= 25 && bmi < 30) {
-                    setResult("Overweight");
-                } else if (bmi >= 30 && bmi < 35) {
-                    setResult("Grade 1 obesity");
-                } else if (bmi >= 35 && bmi < 40) {
-                    setResult("Grade 2 obesity");
-                } else {
-                    setResult("Values out of reality");
-                }
-
-                Toast.makeText(getBaseContext(), "BMI: "+getResult(), Toast.LENGTH_SHORT).show();
+                String bmi = getBMIResult();
+                Toast.makeText(getBaseContext(), "BMI: "+bmi, Toast.LENGTH_SHORT).show();
             } else {
                 Toast.makeText(getBaseContext(), "Invalid data", Toast.LENGTH_SHORT).show();
             }
         }
     };
+
+    public String getBMIResult() {
+
+        String result;
+        Float bmi = getWeight() / ( getHeight() * getHeight() );
+
+        if (bmi >= 18.5 && bmi < 25) {
+            result = "Normal weight";
+        } else if (bmi >= 25 && bmi < 30) {
+            result = "Overweight";
+        } else if (bmi >= 30 && bmi < 35) {
+            result = "Grade 1 obesity";
+        } else if (bmi >= 35 && bmi < 40) {
+            result = "Grade 2 obesity";
+        } else {
+            result = "Values out of reality";
+        }
+
+        return result;
+    }
 
     public boolean validateAllData() {
         return this.validateHeight() && validateWeight() && validateAge() && validateGender();
@@ -131,11 +137,5 @@ public class MainActivity extends AppCompatActivity {
     }
     public void setGender(String gender) {
         this.gender = gender;
-    }
-    public String getResult() {
-        return result;
-    }
-    public void setResult(String result) {
-        this.result = result;
     }
 }
