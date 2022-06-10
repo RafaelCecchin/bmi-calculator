@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculadora de IMC e TMB</string>
+    <string name="app_select">Selecione a opção que deseja calcular</string>
+
+    /* IMC */
+    <string name="bmi">IMC</string>
+    <string name="age">Idade</string>
+    <string name="select_gender">Selecionar gênero</string>
+    <string name="gender_male">Masculino</string>
+    <string name="gender_female">Feminino</string>
+    <string name="height">Altura</string>
+    <string name="weight">Peso</string>
+    <string name="calculate">Calcular</string>
+    <string name="normal_weight">Peso normal</string>
+    <string name="overweight">Acima do peso</string>
+    <string name="grade_1_obesity">Grau 1 de obesidade</string>
+    <string name="grade_2_obesity">Grau 2 de obesidade</string>
+    <string name="values_out_of_reality">Valores fora da realidade</string>
+    <string name="invalid_data">Dados inválidos</string>
+
+    /* BMR */
+    <string name="bmr">BTU</string>
+    <string name="pal">Nível de atividade física</string>
+    <string name="light">Leve</string>
+    <string name="moderate">Moderada</string>
+    <string name="intense">Intensa</string>
+</resources>
